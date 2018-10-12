@@ -13,13 +13,17 @@
     <title>Viral</title>
 </head>
 <body>
-    <div class="container">
-        <header class="header page">
-            <a href="#" class="header__logo">
-                <h1 class="logo__main">Viral</h1>
-                <p class="logo__description">Digital agency</p>
-            </a>
-        </header>
+    <div id="parallax-bg">
+        <div data-depth="0.2" class="layer layer-1"></div>
+        <div data-depth="0.3" class="layer layer-2"></div>
+        <div data-depth="0.4" class="layer layer-3"></div>
+        <div data-depth="0.5" class="layer layer-4"></div>
+    </div>
+    <div id="preloader">
+        <a href="#" class="header__logo">
+            <h1 class="logo__main">Viral</h1>
+            <p class="logo__description">Digital agency</p>
+        </a>
     </div>
 
     <nav class="main-nav">
@@ -56,9 +60,7 @@
     </nav>
 
     <main class="main">
-        
         <div class="slide">
-
         <div class="container container__main-page">
             <section class="main-page page">
                 <h2 class="visually-hidden">Главная</h2>
@@ -232,7 +234,9 @@
                     Как нас найти
                 </header>
 
-                <div class="map"></div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7357.699760678601!2d36.22935497091361!3d50.01051472199048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1539335477906" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
 
                 <ul class="contacts-page__list contacts-list">
                     <li class="contacts-list__item">
@@ -345,32 +349,11 @@
         </ul>
     </section>
 
-    <script src="js/menu-script.js"></script>
-
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/libs.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/menu-script.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
 
-    <script>
-        const slider = $(".slide");
-        slider.slick({
-            dots: true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            fade: true,
-            verticalSwiping: true
-        });
-
-        slider.on('wheel', (function(e) {
-            e.preventDefault();
-
-            if (e.originalEvent.deltaY < 0) {
-                $(this).slick('slickPrev');
-            } else {
-                $(this).slick('slickNext');
-            }
-        }));
-    </script>
 </body>
 </html>
